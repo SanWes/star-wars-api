@@ -24,6 +24,7 @@ const SearchForm = () => {
                         console.log("res looks like -->", res);
                         console.log(Object.keys(res.data));
                         setCategories(Object.keys(res.data))
+
                         })
             .catch(err=> console.log(err))
 
@@ -54,7 +55,15 @@ const SearchForm = () => {
 
 
     return (
-        <div>
+        
+
+        <div className="container-sm">
+            <nav className="navbar navbar-dark"> 
+           
+           
+
+
+           
 
             <form onSubmit={submitHandler} className="form-inline row g-3 align-items-center" action="">
                 <div className="col-auto"> 
@@ -75,10 +84,10 @@ const SearchForm = () => {
                 <h4>Id: </h4>
                     <input onChange = {(e)=>changeHandler(e)} type="number" name="id" id="" className="form-control" />
                 </div>
-                    <button type="submit" className="btn btn-primary mb-2">Search</button>
+                    <button type="submit" className="btn btn-info">Search</button>
 
                 </form>
-
+ </nav>
         </div>
    )
 

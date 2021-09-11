@@ -7,14 +7,19 @@ import Display from './components/Display';
 function App() {
   return (
     <BrowserRouter>
-    <div className="App container">
-      
-      <h1>ApiWalker, The Force is With You</h1>
+    <div className="App">
+          
+          <div className ="App-header">
+            <h1>ApiWalker, The Force is With You</h1>
+            <hr />
+          <SearchForm></SearchForm>
 
-    <SearchForm></SearchForm>
+        </div>
 
       {/* Render different Routes with the Switch and Route Combo */}
+    <div className="card App-body">
 
+    
       <Switch>
           <Route exact path = "/:category/:id">
                 
@@ -22,7 +27,10 @@ function App() {
 
           </Route>
       </Switch>
+    
     </div>
+    
+  </div>
     </BrowserRouter>
   );
 }
