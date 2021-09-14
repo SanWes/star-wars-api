@@ -13,6 +13,11 @@ const SearchForm = () => {
         id:""
     })
 
+    const [randInfo, setRandInfo] = useState({
+        category:"starships",
+        id: "3"
+    })
+
     //initialize useHistory and store it in a variable so we can use it
     const history = useHistory();
 
@@ -52,24 +57,40 @@ const SearchForm = () => {
 
     }
 
+    const showRandom = (e) => {
+        e.preventDefault();
+        console.log("Randomizing Display");
+
+        // var joke = arr[Math.floor(Math.random()*arr.length)];
+        // this.setState({jokes: [joke] });
+
+        setRandInfo()
+        history.push(`/${randInfo.category}/${randInfo.id}`)
+
+        
+
+        // history.push(`/${})
+
+    }
+
 
 
     return (
         
 
-        <div className="container-sm">
-            <nav className="navbar navbar-dark"> 
+        <div className="container-md">
+
+            
+            <nav className="navbar topnav navbar-dark"> 
            
+            <div className="form-group"> 
            
 
-
-           
-
-            <form onSubmit={submitHandler} className="form-inline row g-3 align-items-center" action="">
+            <form onSubmit={submitHandler} className="form-inline row g-3 align-items-center form-control" action="">
                 <div className="col-auto"> 
 
                     <h4>Category: </h4>
-                    <select onChange={changeHandler} name="category" id="" className="form-select">
+                    <select onChange={changeHandler} name="category" id="" className="form-select ">
 
                         {
                             categories.map((cat, idx)=> {
@@ -82,11 +103,22 @@ const SearchForm = () => {
 
                 <div className="col-auto"> 
                 <h4>Id: </h4>
-                    <input onChange = {(e)=>changeHandler(e)} type="number" name="id" id="" className="form-control" />
+                    <input onChange = {(e)=>changeHandler(e)} type="number" name="id" id="" className="" />
                 </div>
                     <button type="submit" className="btn btn-info">Search</button>
 
+        {/* new button to do random search  */}
+
                 </form>
+
+                        <form onSubmit={showRandom} className="form-inline">
+                        <div className="col-auto">
+                        <button type="submit" className="btn btn-outline-warning">Show Random</button>
+                        </div>
+                        </form>
+
+
+ </div>
  </nav>
         </div>
    )

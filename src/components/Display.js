@@ -3,6 +3,9 @@ import {  useParams } from 'react-router';
 import axios from 'axios';
 
 import Planets from './Planets';
+import Starships from './Starships';
+import Species from './Species';
+
 
 const Display = () => {
 
@@ -67,17 +70,32 @@ const Display = () => {
                 <p> <b> Home World:  </b> {home} </p>
 
                 {/* <a href={info.homeworld}> homeworld </a> */}
-            <button className="btn-success" onClick={homeworldHandler}>Load HomeWorld</button>
+            <button className="btn-outline-success" onClick={homeworldHandler}>Load HomeWorld</button>
 
                     </>:
                 
                 category === "planets"?
                     <>
-                <Planets name={info.name} climate={info.climate} terrain={info.terrain} orbital_period={info.orbital_period} ></Planets>
+                <Planets name={info.name} climate={info.climate} terrain={info.terrain} orbital_period={info.orbital_period} >  </Planets>
                     </>:
                 
 
-                category ==="films"?
+                category ==="starships"?
+
+                    <>
+
+             <Starships name={info.name} starship_class={info.starship_class} cost={info.cost_in_credits } max_speed={info.max_atmosphering_speed} hyperdrive = {info.hyperdrive_rating} >  </Starships>
+                    </>:
+                
+                category ==="species"?
+
+                    <>
+
+             <Species name={info.name} classification={info.classification} designation={info.designation } average_lifespan={info.average_lifespan} language = {info.language} >  </Species>
+                    </>:
+
+
+                    category ==="films"?
 
                     <>
 
@@ -86,6 +104,16 @@ const Display = () => {
                 <h3>Producer: {info.producer}</h3>
                 <p> <b>  Opening Crawl: </b> 
                 <br />    {info.opening_crawl}</p>
+
+                    </>:
+                    category ==="vehicles"?
+
+                    <>
+
+                <h3>Name: {info.name} </h3>
+                <h3>cost: {info.cost_in_credits}</h3>
+                <h3>Crew: {info.crew}</h3>
+                <h3>Manufacturer: {info.manufacturer}</h3>
 
                     </>:
 

@@ -4,7 +4,11 @@
 
 .App {
   text-align: center;
-  background-color: rgb(212, 0, 0);
+  background-image: url("https://i.pinimg.com/originals/fb/2d/19/fb2d193eeacd7483b652d86d155112d8.jpg");
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  height: 100vh;
   
 }
 
@@ -21,6 +25,7 @@
 
 .App-header {
   background-image: url("https://preview.redd.it/1iw0tfd0eax41.jpg?width=960&crop=smart&auto=webp&s=aa61783512f7374829a523aefa08ed419eb5c5a8");
+  
   background-position: center;
   background-size: cover; 
   background-repeat: no-repeat;
@@ -31,21 +36,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: large;
   color: rgb(0, 0, 0);
-  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px black, 1px 0 black, 0 -1px rgb(255, 255, 255);
+  text-shadow: -1px 0 rgb(255, 255, 255), 0 3px rgb(228, 0, 0), 1px 0 black, 0 -1px rgb(255, 255, 255);
 }
 
 
 .App-body{
     background-image: url("https://i.pinimg.com/originals/fb/2d/19/fb2d193eeacd7483b652d86d155112d8.jpg");
     background-position: center;
-    background-size: cover; 
+    background-size:auto; 
     background-repeat: no-repeat;
+
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     /* font-style:italic; */
     font-size: large;
     font-weight: bold;
+    margin: 10px;
+    padding: 10px;
     color: rgb(255, 251, 0);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
@@ -91,7 +99,6 @@
 /* The navbar */
 .topnav {
   overflow: hidden;
-  background-color: #333;
 }
 
 /* Navbar links */
